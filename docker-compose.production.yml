@@ -9,16 +9,20 @@ services:
   db:
     image: postgres:13.10
     env_file: .env
-    # ports:
-    #   - 5432:5432
     volumes:
       - pg_data:/var/lib/postgresql/data
+    networks:
+      default:
+        ipv4_address: 172.16.1.6
   backend:
     image: nikmodenov/kittygram_backend
     env_file: .env
     volumes:
       - static:/backend_static
       - media:/media
+    networks:
+      default:
+        ipv4_address: 172.16.1.6
   frontend:
     env_file: .env
     image: nikmodenov/kittygram_frontend
@@ -33,3 +37,10 @@ services:
     volumes:
       - static:/static
       - media:/media
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.1.0/24
