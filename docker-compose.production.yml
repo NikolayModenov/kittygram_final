@@ -27,6 +27,8 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
+    networks:
+      - default
   gateway:
     image: nikmodenov/kittygram_gateway
     env_file: .env
@@ -35,6 +37,8 @@ services:
     volumes:
       - static:/static
       - media:/media
+    networks:
+      - default
 
 networks:
   default:
