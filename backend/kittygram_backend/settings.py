@@ -2,13 +2,14 @@
 import os
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', default=None)
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default=None)
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,9 +66,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
