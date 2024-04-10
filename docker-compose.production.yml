@@ -21,6 +21,8 @@ services:
       - media:/media
     networks:
       - default
+    depends_on:
+        - db
   frontend:
     env_file: .env
     image: nikmodenov/kittygram_frontend
