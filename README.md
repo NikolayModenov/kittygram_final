@@ -1,6 +1,6 @@
 # Kittygram. Котики для всех.
 
-###![kittygram workflow](https://github.com/NikolayModenov/kittygram_final/actions/workflows/main.yml/badge.svg)
+![kittygram workflow](https://github.com/NikolayModenov/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 ### Автор
 
