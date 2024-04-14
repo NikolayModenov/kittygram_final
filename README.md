@@ -1,4 +1,6 @@
-![kittygram workflow](https://github.com/NikolayModenov/kittygram_final/actions/workflows/main.yml/badge.svg)
+# Kittygram. Котики для всех.
+
+###![kittygram workflow](https://github.com/NikolayModenov/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 ### Автор
 
@@ -32,9 +34,9 @@
 
 3. Получите и сохраните новый Secret key, для этого перейдите в директорию с файлом manage.py и поочерёдно введите команды:
 
-```python manage.py shell```
-```from django.core.management.utils import get_random_secret_key```
-```get_random_secret_key()```
+- ```python manage.py shell```
+- ```from django.core.management.utils import get_random_secret_key```
+- ```get_random_secret_key()```
 
 4. Подключитесь к удалённому серверу.
 
@@ -57,27 +59,22 @@
 - ```sudo nano /etc/nginx/sites-enabled/default ``` - Удалите все настройки из файла, запишите и сохраните новые:
 
     server {
-
         server_name 20gramsofkitty.ru;
-
         location / {
             proxy_set_header Host $http_host;
             proxy_pass http://127.0.0.1:9000;
         }
-
         listen 443 ssl; # managed by Certbot
         ssl_certificate /etc/letsencrypt/live/taskis.zapto.org/fullchain.pem; # man>
         ssl_certificate_key /etc/letsencrypt/live/taskis.zapto.org/privkey.pem; # m>
         include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
     }
 
     server {
         if ($host = 20gramsofkitty.ru) {
             return 301 https://$host$request_uri;
         } # managed by Certbot
-
         server_name 51.250.108.150 20gramsofkitty.ru;
         listen 80;
         return 404; # managed by Certbot
@@ -119,13 +116,13 @@
 
 ## Список приложений используемых для разработки проекта
 
-Python 3.9.13
-Django 3.2.3
-djangorestframework 3.12.4
-djoser 2.1.0
-PyJWT 2.1.0
-pytest 6.2.4
-pytest-django 4.4.0
-gunicorn 20.1.0
-Node.js 18 
-nginx 1.22.1
+- Python 3.9.13
+- Django 3.2.3
+- djangorestframework 3.12.4
+- djoser 2.1.0
+- PyJWT 2.1.0
+- pytest 6.2.4
+- pytest-django 4.4.0
+- gunicorn 20.1.0
+- Node.js 18 
+- nginx 1.22.1
