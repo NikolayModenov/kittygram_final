@@ -58,7 +58,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
 
-if 'test' in sys.argv:
+if os.getenv('PARAMETER', default='test') in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
