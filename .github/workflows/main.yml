@@ -166,7 +166,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: В ветке ${{ github.ref_name }}, было успешно завершёно действие - ${{ github.event_name }}.\n
+        message: "В ветке ${{ github.ref_name }}, было успешно завершёно действие - ${{ github.event_name }}.\n
                  Изменение внёс - ${{ github.actor }}.\n
                  Название коммита - ${{ github.event.commits[0].message }}.\n
-                 сслыка на коммит - https://github.com/${{github.repository}}/commit/${{github.sha}}.
+                 сслыка на коммит - https://github.com/${{github.repository}}/commit/${{github.sha}}."
